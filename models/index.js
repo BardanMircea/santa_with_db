@@ -27,14 +27,34 @@ const Category = db.define('Category', {
 const Elf = db.define("Elf", {
     firstName : {type : Sequelize.STRING},
     lastName : {type : Sequelize.STRING},
-    login : {type : Sequelize.STRING},
+    login : {
+        type : Sequelize.STRING,
+        // unique : true
+    },
     password : {type : Sequelize.STRING}
+}, {
+    timestamps : false
+});
+
+const Wish = db.define("Wish", {
+    childName : {type : Sequelize.STRING}
+}, {
+    timestamps : false
+})
+
+const Schedule = db.define("Schedule", {
+    done : {type : Sequelize.BOOLEAN},
+    done_at : {type : Sequelize.DATE}
 }, {
     timestamps : false
 })
 
 Category.hasMany(Toy, {foreignKey : "category_id"}); 
-Toy.belongsTo(Category, {foreignKey : "category_id"});
+
+Toy.hasMany(Wish, {foreignKey : "toy_id"});
+
+Elf.hasMany(Schedule, {foreignKey : "elf_id"})
+Wish.hasOne(Schedule, {foreignKey : "wish_id"})
 
 
-module.exports = {db, Toy, Category};
+module.exports = {Toy, Category, Elf, Wish, Schedule};
