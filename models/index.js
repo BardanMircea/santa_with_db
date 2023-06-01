@@ -33,7 +33,12 @@ const Elf = db.define("Elf", {
     },
     password : {type : Sequelize.STRING}
 }, {
-    timestamps : false
+    timestamps : false,
+    scopes: {
+        withoutPassword: {
+          attributes: { exclude: ['password'] },         // to prevent the password being returned when querying the table using this scope
+        }
+      }                                              
 });
 
 const Wish = db.define("Wish", {
