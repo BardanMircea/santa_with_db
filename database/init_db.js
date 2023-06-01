@@ -1,4 +1,4 @@
-const {Toy, Category, Elf, Wish, Schedule} = require('./models')
+const {Toy, Category, Elf, Wish, Schedule} = require('../models')
 
 const create_tables = async () => {
     await Category.sync({force : true});
