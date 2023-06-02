@@ -1,9 +1,7 @@
 santa_with_db
 
 
-Modified the five RESTful routes for categories, and made them query the database instead of using the categories variable.
-
-
+Modified Santa_no_DB, adapted the five RESTful routes, and made them query the database instead of using the categories variable.
 
 one to get the list of all elements (GET)
 one to show one specific element (GET)
