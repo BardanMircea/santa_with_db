@@ -1,11 +1,5 @@
 Santa_with_db
 
 
-Modified Santa_no_DB, adapted the five RESTful routes, and made them query the database instead of using the categories variable.
-
-one to get the list of all elements (GET)
-one to show one specific element (GET)
-one to create a new element (POST)
-one to update an element (PUT)
-one to delete an element (DELETE)
+Modified the [Santa_no_DB] project, adapted the five RESTful routes for Categories and Toys, and made them query the database instead of using the categories variable.
 If a requested category doesn't exist, return a 404. (This never changes, it's part of the HTTP protocol!)
