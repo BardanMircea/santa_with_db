@@ -1,4 +1,4 @@
-santa_with_db
+Santa_with_db
 
 
 Modified Santa_no_DB, adapted the five RESTful routes, and made them query the database instead of using the categories variable.
